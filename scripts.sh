@@ -48,3 +48,15 @@ npm i -D prettier eslint-config-prettier @typescript-eslint/eslint-plugin
 #   "editor.formatOnSave": true,
 #   "editor.defaultFormatter": "esbenp.prettier-vscode"
 # }
+
+# TailwindCSS
+# https://tailwindcss.com/docs/guides/angular を参考に設定するが、マルチプロジェクトの場合、パスが異なるのに注意。
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+# tailwind.config.jsを編集
+# styles.cssに追記
+
+# daisyUI
+# https://daisyui.com/docs/install/ を参考に設定
+npm i -D daisyui@latest
+# tailwind.config.jsのpluginsに`require("daisyui")`を追加
