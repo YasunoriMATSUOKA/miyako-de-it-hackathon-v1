@@ -1,6 +1,6 @@
 import { AppComponent } from './app.component';
 import { render } from '@testing-library/angular';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 describe('AppComponent', () => {
   it('should create the app', async () => {
