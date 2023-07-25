@@ -83,3 +83,7 @@ ng generate component scan --inline-style --inline-template --project web --stan
 
 # projects/web/src/app/app.routes.tsにrouting設定を追記
 # projects/web/src/app/app.config.tsのprovideRouterにwithComponentInputBinding()
+
+# Testing Library導入
+npm install --save-dev @testing-library/angular
+# testing-libraryの流儀でテスト書き換え
