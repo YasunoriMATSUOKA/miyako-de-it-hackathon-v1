@@ -87,3 +87,8 @@ ng generate component scan --inline-style --inline-template --project web --stan
 # Testing Library導入
 npm install --save-dev @testing-library/angular
 # testing-libraryの流儀でテスト書き換え
+
+# 認証関連ページを追加
+ng generate component auth-sign-up --inline-style --inline-template --project web --standalone
+ng generate component auth-sign-in --inline-style --inline-template --project web --standalone
+ng generate component auth-reset-password --inline-style --inline-template --project web --standalone
