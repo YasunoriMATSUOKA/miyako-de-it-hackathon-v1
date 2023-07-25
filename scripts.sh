@@ -92,3 +92,20 @@ npm install --save-dev @testing-library/angular
 ng generate component pages/auth-sign-up --inline-style --inline-template --project web --standalone
 ng generate component pages/auth-sign-in --inline-style --inline-template --project web --standalone
 ng generate component pages/auth-reset-password --inline-style --inline-template --project web --standalone
+
+# Navbar
+ng generate component ui/navbar --inline-style --inline-template --project web --standalone
+ng generate component ui/drawer --inline-style --inline-template --project web --standalone
+ng generate component ui/avatar --inline-style --inline-template --project web --standalone
+ng generate component ui/avatar-with-tooltip --inline-style --inline-template --project web --standalone
+ng generate component ui/menu --inline-style --inline-template --project web --standalone
+ng generate component ui/dropdown-menu --inline-style --inline-template --project web --standalone
+ng generate component ui/footer --inline-style --inline-template --project web --standalone
+
+# fontawesome icon (Angular 16.x -> @fortawesome/angular-fontawesome@0.13)
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/angular-fontawesome@0.13
+
+# icon関連コンポーネントを作成(単純なコンポーネントなのでテストは省略し、アイコンの数だけコピペして対応した)
+ng generate component ui/icons/fontawesome/fa-home-icon --inline-style --inline-template --project web --standalone
