@@ -1,17 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { render, screen } from '@testing-library/angular';
 import { DogsDogPostsComponent } from './dogs-dog-posts.component';
 
 describe('DogsDogPostsComponent', () => {
-  let component: DogsDogPostsComponent;
-  let fixture: ComponentFixture<DogsDogPostsComponent>;
-
-  it('should create', () => {
-    TestBed.configureTestingModule({
-      imports: [DogsDogPostsComponent],
-    });
-    fixture = TestBed.createComponent(DogsDogPostsComponent);
-    component = fixture.componentInstance;
+  it('should create', async () => {
+    const renderResult = await render(DogsDogPostsComponent);
+    const fixture = renderResult.fixture;
+    const component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });

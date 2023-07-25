@@ -1,17 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { render, screen } from '@testing-library/angular';
 import { AuthSignInComponent } from './auth-sign-in.component';
 
 describe('AuthSignInComponent', () => {
-  let component: AuthSignInComponent;
-  let fixture: ComponentFixture<AuthSignInComponent>;
-
-  it('should create', () => {
-    TestBed.configureTestingModule({
-      imports: [AuthSignInComponent],
-    });
-    fixture = TestBed.createComponent(AuthSignInComponent);
-    component = fixture.componentInstance;
+  it('should create', async () => {
+    const renderResult = await render(AuthSignInComponent);
+    const fixture = renderResult.fixture;
+    const component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });

@@ -73,13 +73,13 @@ npx firebase login
 npx firebase init
 
 # URLに対応したページを追加
-ng generate component home --inline-style --inline-template --project web --standalone
-ng generate component dogs-create --inline-style --inline-template --project web --standalone
-ng generate component dogs-dog --inline-style --inline-template --project web --standalone
-ng generate component dogs-dog-posts-create --inline-style --inline-template --project web --standalone
-ng generate component dogs-dog-posts-post --inline-style --inline-template --project web --standalone
-ng generate component dogs-dog-posts --inline-style --inline-template --project web --standalone
-ng generate component scan --inline-style --inline-template --project web --standalone
+ng generate component pages/home --inline-style --inline-template --project web --standalone
+ng generate component pages/dogs-create --inline-style --inline-template --project web --standalone
+ng generate component pages/dogs-dog --inline-style --inline-template --project web --standalone
+ng generate component pages/dogs-dog-posts-create --inline-style --inline-template --project web --standalone
+ng generate component pages/dogs-dog-posts-post --inline-style --inline-template --project web --standalone
+ng generate component pages/dogs-dog-posts --inline-style --inline-template --project web --standalone
+ng generate component pages/scan --inline-style --inline-template --project web --standalone
 
 # projects/web/src/app/app.routes.tsにrouting設定を追記
 # projects/web/src/app/app.config.tsのprovideRouterにwithComponentInputBinding()
@@ -89,6 +89,6 @@ npm install --save-dev @testing-library/angular
 # testing-libraryの流儀でテスト書き換え
 
 # 認証関連ページを追加
-ng generate component auth-sign-up --inline-style --inline-template --project web --standalone
-ng generate component auth-sign-in --inline-style --inline-template --project web --standalone
-ng generate component auth-reset-password --inline-style --inline-template --project web --standalone
+ng generate component pages/auth-sign-up --inline-style --inline-template --project web --standalone
+ng generate component pages/auth-sign-in --inline-style --inline-template --project web --standalone
+ng generate component pages/auth-reset-password --inline-style --inline-template --project web --standalone
