@@ -1,14 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { render, screen } from '@testing-library/angular';
 
 describe('AppComponent', () => {
-  beforeEach(() =>
+  it('should create the app', () => {
     TestBed.configureTestingModule({
       imports: [AppComponent],
-    }),
-  );
-
-  it('should create the app', () => {
+    });
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
@@ -20,12 +18,8 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('web');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'web app is running!',
-    );
+  it('should render title', async () => {
+    await render(AppComponent);
+    expect(screen.getByText('web app is running!')).toBeTruthy();
   });
 });
