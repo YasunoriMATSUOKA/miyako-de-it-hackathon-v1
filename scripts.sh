@@ -60,3 +60,14 @@ npx tailwindcss init
 # https://daisyui.com/docs/install/ を参考に設定
 npm i -D daisyui@latest
 # tailwind.config.jsのpluginsに`require("daisyui")`を追加
+
+# Firebase
+npm i -D firebase-tools
+npm i firebase
+
+# firebaseのwebコンソール上でプロジェクト作成、firestoreのリージョン選択、storageのバケット作成
+ng generate environments --project web
+# environment.tsとenvironment.development.tsにfirebase関連の各種秘密情報を追記
+
+npx firebase login
+npx firebase init
