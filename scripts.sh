@@ -71,3 +71,15 @@ ng generate environments --project web
 
 npx firebase login
 npx firebase init
+
+# URLに対応したページを追加
+ng generate component home --inline-style --inline-template --project web --standalone
+ng generate component dogs-create --inline-style --inline-template --project web --standalone
+ng generate component dogs-dog --inline-style --inline-template --project web --standalone
+ng generate component dogs-dog-posts-create --inline-style --inline-template --project web --standalone
+ng generate component dogs-dog-posts-post --inline-style --inline-template --project web --standalone
+ng generate component dogs-dog-posts --inline-style --inline-template --project web --standalone
+ng generate component scan --inline-style --inline-template --project web --standalone
+
+# projects/web/src/app/app.routes.tsにrouting設定を追記
+# projects/web/src/app/app.config.tsのprovideRouterにwithComponentInputBinding()
