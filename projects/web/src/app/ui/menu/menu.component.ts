@@ -54,7 +54,7 @@ import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qr
         </a>
       </li>
       <li>
-        <a routerLink="auth/sign-out">
+        <a routerLink="/auth/sign-out">
           <app-fa-arrow-right-from-bracket-icon></app-fa-arrow-right-from-bracket-icon>
           Sign out
         </a>

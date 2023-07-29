@@ -18,7 +18,7 @@ import { FooterComponent } from '../footer/footer.component';
           [imageUrl]="imageUrl"
         ></app-navbar>
 
-        <div class="flex-grow">
+        <div class="flex-grow container mx-auto">
           <ng-content></ng-content>
         </div>
 

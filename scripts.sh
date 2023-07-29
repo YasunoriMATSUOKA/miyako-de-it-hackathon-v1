@@ -109,3 +109,13 @@ npm install @fortawesome/angular-fontawesome@0.13
 
 # icon関連コンポーネントを作成(単純なコンポーネントなのでテストは省略し、アイコンの数だけコピペして対応した)
 ng generate component ui/icons/fontawesome/fa-home-icon --inline-style --inline-template --project web --standalone
+
+# @angular/fire セットアップ https://zenn.dev/akai/articles/a66df86caab520
+# app.module.tsをダミーで作る(2023/07/26時点だと、standalone環境で、app.module.tsが無いと次のコマンドがエラーになる)
+ng add @angular/fire
+# app.module.tsへのfirebase関連実装を app.config.ts に移す
+
+# auth関連
+ng generate
+
+ng generate component ui/button/sign-in-button --inline-style --inline-template --project web --standalone

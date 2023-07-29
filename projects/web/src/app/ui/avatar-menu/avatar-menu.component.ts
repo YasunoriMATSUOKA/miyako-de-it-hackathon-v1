@@ -8,12 +8,14 @@ import { FaArrowRightFromBracketIconComponent } from '../icons/fontawesome/fa-ar
 import { FaHomeIconComponent } from '../icons/fontawesome/fa-home-icon/fa-home-icon.component';
 import { FaUserPlusIconComponent } from '../icons/fontawesome/fa-user-plus-icon/fa-user-plus-icon.component';
 import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qrcode-icon.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-avatar-menu',
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
     AvatarWithTooltipComponent,
     MenuComponent,
     FaHomeIconComponent,
@@ -63,7 +65,7 @@ import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qr
           </a>
         </li>
         <li>
-          <a routerLink="auth/sign-out">
+          <a routerLink="/auth/sign-out">
             <app-fa-arrow-right-from-bracket-icon></app-fa-arrow-right-from-bracket-icon>
             Sign out
           </a>
