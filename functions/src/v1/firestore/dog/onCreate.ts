@@ -8,7 +8,6 @@ import { generateNewAccount } from '../../../utils/symbol/generateNewAccount';
 import {
   createIvHexString,
   createSaltHexString,
-  decrypt,
   encrypt,
 } from '../../../utils/cypher/encrypt';
 import { getUser } from '../user/model';
@@ -67,19 +66,6 @@ export const onCreate = functions
     if (!user) {
       throw Error('User not found');
     }
-
-    const userMultisigPrivateKey = decrypt(
-      user.multisigEncryptedPrivateKey,
-      ENCRYPTION_KEY.value(),
-      user.salt,
-      user.iv,
-    );
-    const userCosignatoryPrivateKey = decrypt(
-      user.cosignatoryEncryptedPrivateKey,
-      ENCRYPTION_KEY.value(),
-      user.salt,
-      user.iv,
-    );
 
     await sendInitializeDogMultisigAccountTx(
       FEE_ACCOUNT_PRIVATE_KEY.value(),
