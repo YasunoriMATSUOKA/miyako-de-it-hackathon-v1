@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterLink } from '@angular/router';
 
 import { AvatarMenuComponent } from './avatar-menu.component';
 
@@ -8,7 +9,7 @@ describe('AvatarMenuComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AvatarMenuComponent],
+      imports: [AvatarMenuComponent, RouterLink],
     });
     fixture = TestBed.createComponent(AvatarMenuComponent);
     component = fixture.componentInstance;

@@ -44,3 +44,4 @@ Thumbs.db
 # Firebase
 projects/web/src/environments/environment.ts
 projects/web/src/environments/environment.development.ts
+.firebase

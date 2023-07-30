@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './services/auth/auth.guard';
 
 export const routes: Routes = [
   {
@@ -28,7 +29,15 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'auth/sign-out',
+    loadComponent: () =>
+      import('./pages/auth-sign-out/auth-sign-out.component').then(
+        (m) => m.AuthSignOutComponent,
+      ),
+  },
+  {
     path: 'dogs/create',
+    canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/dogs-create/dogs-create.component').then(
         (m) => m.DogsCreateComponent,
@@ -43,6 +52,7 @@ export const routes: Routes = [
   },
   {
     path: 'dogs/:dogId/posts/create',
+    canActivate: [authGuard],
     loadComponent: () =>
       import(
         './pages/dogs-dog-posts-create/dogs-dog-posts-create.component'

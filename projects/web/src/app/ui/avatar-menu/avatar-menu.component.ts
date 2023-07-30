@@ -8,12 +8,14 @@ import { FaArrowRightFromBracketIconComponent } from '../icons/fontawesome/fa-ar
 import { FaHomeIconComponent } from '../icons/fontawesome/fa-home-icon/fa-home-icon.component';
 import { FaUserPlusIconComponent } from '../icons/fontawesome/fa-user-plus-icon/fa-user-plus-icon.component';
 import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qrcode-icon.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-avatar-menu',
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
     AvatarWithTooltipComponent,
     MenuComponent,
     FaHomeIconComponent,
@@ -38,10 +40,10 @@ import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qr
             Home
           </a>
         </li>
-        <li>
+        <li *ngIf="name">
           <a routerLink="/dogs/create">
             <app-fa-dog-icon></app-fa-dog-icon>
-            Create dog
+            Register dog
           </a>
         </li>
         <li>
@@ -50,20 +52,14 @@ import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qr
             Scan
           </a>
         </li>
-        <li>
-          <a routerLink="/auth/sign-up">
-            <app-fa-user-plus-icon></app-fa-user-plus-icon>
-            Sign up
-          </a>
-        </li>
-        <li>
+        <li *ngIf="!name">
           <a routerLink="/auth/sign-in">
             <app-fa-arrow-right-to-bracket-icon></app-fa-arrow-right-to-bracket-icon>
             Sign in
           </a>
         </li>
-        <li>
-          <a routerLink="auth/sign-out">
+        <li *ngIf="name">
+          <a routerLink="/auth/sign-out">
             <app-fa-arrow-right-from-bracket-icon></app-fa-arrow-right-from-bracket-icon>
             Sign out
           </a>

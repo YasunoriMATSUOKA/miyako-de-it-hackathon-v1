@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "miyako-de-it-hackathon-v1-test"
+  },
+  "targets": {
+    "miyako-de-it-hackathon-v1-test": {
+      "hosting": {
+        "web": [
+          "miyako-de-it-hackathon-v1-test"
+        ]
+      }
+    }
   }
 }

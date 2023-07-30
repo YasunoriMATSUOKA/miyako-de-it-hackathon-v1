@@ -7,7 +7,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-fa-user-icon',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
-  template: ` <fa-icon [icon]="iconDefinition" size="2x"></fa-icon> `,
+  template: ` <fa-icon [icon]="iconDefinition"></fa-icon> `,
   styles: [],
 })
 export class FaUserIconComponent {
