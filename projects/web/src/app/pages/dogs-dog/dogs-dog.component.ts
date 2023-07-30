@@ -53,6 +53,10 @@ import { RouterLink } from '@angular/router';
         {{ ownerUserId }}</a
       >
     </div>
+
+    <a class="btn btn-primary my-4" routerLink="/dogs/{{ dogId }}/posts/create"
+      >Add this dog's record</a
+    >
   `,
   styles: [],
 })

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SignInButtonComponent } from '../../ui/button/sign-in-button/sign-in-button.component';
+import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-sign-in',
@@ -16,4 +18,17 @@ import { SignInButtonComponent } from '../../ui/button/sign-in-button/sign-in-bu
   `,
   styles: [],
 })
-export class AuthSignInComponent {}
+export class AuthSignInComponent {
+  authService = inject(AuthService);
+  router = inject(Router);
+
+  authUser = this.authService.authUser;
+
+  constructor() {
+    effect(() => {
+      if (this.authUser()) {
+        this.router.navigate(['/dogs/create']);
+      }
+    });
+  }
+}

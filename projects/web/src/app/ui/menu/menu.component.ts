@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaHomeIconComponent } from '../icons/fontawesome/fa-home-icon/fa-home-icon.component';
 import { FaDogIconComponent } from '../icons/fontawesome/fa-dog-icon/fa-dog-icon.component';
@@ -29,10 +29,10 @@ import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qr
           Home
         </a>
       </li>
-      <li>
+      <li *ngIf="name">
         <a routerLink="/dogs/create">
           <app-fa-dog-icon></app-fa-dog-icon>
-          Create dog
+          Register dog
         </a>
       </li>
       <li>
@@ -41,19 +41,13 @@ import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qr
           Scan
         </a>
       </li>
-      <li>
-        <a routerLink="/auth/sign-up">
-          <app-fa-user-plus-icon></app-fa-user-plus-icon>
-          Sign up
-        </a>
-      </li>
-      <li>
+      <li *ngIf="!name">
         <a routerLink="/auth/sign-in">
           <app-fa-arrow-right-to-bracket-icon></app-fa-arrow-right-to-bracket-icon>
           Sign in
         </a>
       </li>
-      <li>
+      <li *ngIf="name">
         <a routerLink="/auth/sign-out">
           <app-fa-arrow-right-from-bracket-icon></app-fa-arrow-right-from-bracket-icon>
           Sign out
@@ -63,4 +57,6 @@ import { FaQrcodeIconComponent } from '../icons/fontawesome/fa-qrcode-icon/fa-qr
   `,
   styles: [],
 })
-export class MenuComponent {}
+export class MenuComponent {
+  @Input() name?: string;
+}

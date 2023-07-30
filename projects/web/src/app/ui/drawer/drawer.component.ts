@@ -26,7 +26,7 @@ import { FooterComponent } from '../footer/footer.component';
       </div>
       <div class="drawer-side">
         <label for="app-menu-drawer" class="drawer-overlay"></label>
-        <app-menu></app-menu>
+        <app-menu [name]="name"></app-menu>
       </div>
     </div>
   `,

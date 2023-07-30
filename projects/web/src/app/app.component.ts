@@ -22,7 +22,7 @@ import { AuthService } from './services/auth/auth.service';
 export class AppComponent {
   authService = inject(AuthService);
 
-  title = 'Proof of Pedigree';
+  title = 'DOGs';
   avatarName = computed(() => this.authService.authUser()?.displayName ?? '');
   avatarImageUrl = computed(() => this.authService.authUser()?.photoURL ?? '');
 }

@@ -38,6 +38,10 @@ export class UserService {
   private docRef = (uid: string) =>
     doc(this.firestore, this.docPath(uid)).withConverter(this.converter);
 
+  async getUser(uid: string) {
+    return (await getDoc(this.docRef(uid))).data();
+  }
+
   getUser$(uid: string) {
     return docData(this.docRef(uid));
   }

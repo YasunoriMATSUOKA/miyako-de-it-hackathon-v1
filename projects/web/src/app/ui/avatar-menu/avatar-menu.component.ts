@@ -40,10 +40,10 @@ import { RouterLink } from '@angular/router';
             Home
           </a>
         </li>
-        <li>
+        <li *ngIf="name">
           <a routerLink="/dogs/create">
             <app-fa-dog-icon></app-fa-dog-icon>
-            Create dog
+            Register dog
           </a>
         </li>
         <li>
@@ -52,19 +52,13 @@ import { RouterLink } from '@angular/router';
             Scan
           </a>
         </li>
-        <li>
-          <a routerLink="/auth/sign-up">
-            <app-fa-user-plus-icon></app-fa-user-plus-icon>
-            Sign up
-          </a>
-        </li>
-        <li>
+        <li *ngIf="!name">
           <a routerLink="/auth/sign-in">
             <app-fa-arrow-right-to-bracket-icon></app-fa-arrow-right-to-bracket-icon>
             Sign in
           </a>
         </li>
-        <li>
+        <li *ngIf="name">
           <a routerLink="/auth/sign-out">
             <app-fa-arrow-right-from-bracket-icon></app-fa-arrow-right-from-bracket-icon>
             Sign out
